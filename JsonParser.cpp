@@ -32,7 +32,10 @@ namespace JsonV2 {
 											SizeType start_position )
 	{
 		for ( SizeType i=start_position; i<strings.size(); ++i ) {
+
+		#ifdef _DEBUG
 			auto current = strings[i]; // Only for debugging.
+		#endif
 
 			if ( strings[i] == "{" || strings[i] == "[" ) { // "{"
 				auto& child = NewChild();
@@ -75,10 +78,12 @@ namespace JsonV2 {
 				NewChild()[ strings[i] ];
 				i=i+1;
 			}
+		#ifdef _DEBUG
 			else { // Only for debugging.
 				auto wut = strings[i]; // Only for debugging.
 				return i;
 			}
+		#endif
 		}
 		return strings.size();
 	}
@@ -174,10 +179,12 @@ namespace JsonV2 {
 
 		return str;
 	}
-
+	
+#ifdef _DEBUG
 	String JsonObject::DEBUG_PrintSharedString() const {
 		return "DebugPrint:\n'" + ( *shared_string_ ) + "'\n";
 	}
+#endif
 
 	/*const JsonObject* Find( const JsonObject& object, const String& key ) {
 		if ( *object.key_ == key ) return &object;

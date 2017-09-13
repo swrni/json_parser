@@ -7,22 +7,22 @@
 using namespace JsonV2;
 
 
-void Test1();
-void Test2();
-void Test3();
+void Example1();
+void Example2();
+void Example3();
 
 
-int main( int argc, char* argv[] ) {
-	Test1();
-	// Test2();
-	// Test3();
+int main() {
+	Example1();
+	// Example2();
+	// Example3();
 
 	system( "pause" );
 	return 0;
 }
 
 
-void Test1() {
+void Example1() {
 	JsonObject o;
 	o.NewChild()[ "event_type" ] = "'event01'";
 	o.NewChild()[ "id" ] = 12345;
@@ -33,7 +33,7 @@ void Test1() {
 	std::cout << output << "\n\n";
 }
 
-void Test2() {
+void Example2() {
 	JsonObject o;
 	const std::string example =
 		"{ \
@@ -55,23 +55,24 @@ void Test2() {
 			updated_time: 2010 \
 		}";
 		
-		
-	// std::cout << example << "\n\n";
+	// Create JsonObject from the string.
 	o.LoadFromString( example );
 
+	// Print the hierarchy.
 	std::cout << o.ToString() << "\n\n";
-	// std::cout << '\n' << '\n';
 
+	// Append two new items.
 	o.NewChild()[ "ASDF" ];
 	o.NewChild()[ "0ASD" ];
 
+	// Print the modified hierarchy.
 	std::cout << o.ToString() << "\n\n";
 
+	// Print the shared string.
 	std::cout << o.DEBUG_PrintSharedString();
 }
 
-void Test3() {
-	// std::string test_string = "{ \"Ankka\":{\"kvak\":13}, \"kvak\":14, \"kvak\":[13,14] }";
+void Example3() {
 	const std::string test_string =
 		"{ [a,b], Duck:12, Ankka:{kvak1:13}, kvak2:14, kvak3:[15,16] }";
 

@@ -67,7 +67,9 @@ namespace JsonV2 {
 			String ChildrenToString() const;
 			String ToString() const;
 		
+		#ifdef _DEBUG
 			String DEBUG_PrintSharedString() const;
+		#endif
 
 		private:
 			const JsonObject* FindByValue( const StringView value_view ) const;
