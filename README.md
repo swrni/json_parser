@@ -1,8 +1,8 @@
 # JsonParser
-This is a simple JsonParser I made as an exercise. I tried to follow the C++11 syntax where possible.
+This is a simple JSON parser I made as an exercise. I tried to follow the C++11 syntax where possible.
 
 ### Examples
-The file main.cpp consists of three examples of how to use the Parser.
+The file main.cpp consists of three examples of how to use the parser.
 
 ### Project structure
 * StringView (.hpp/.cpp): my own placeholder for std::string_view.
@@ -10,4 +10,4 @@ The file main.cpp consists of three examples of how to use the Parser.
 * main.cpp: See the ^Examples^
 
 ### License
-This project uses the MIT License. See the file [LICENSE.md](LICENSE.md).
+This project uses the MIT License. See the file [LICENSE.md](LICENSE)
