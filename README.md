@@ -10,4 +10,4 @@ The file main.cpp consists of three examples of how to use the parser.
 * main.cpp: See the ^Examples^
 
 ### License
-This project uses the MIT License. See the file [LICENSE.md](LICENSE)
+This project uses the MIT License. See the file [LICENSE](LICENSE)
